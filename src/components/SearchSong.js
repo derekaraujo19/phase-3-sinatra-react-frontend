@@ -1,9 +1,16 @@
 
-function SearchSong() {
+function SearchSong({search, onSearchChange}) {
   return (
-    <div>
-      <h3>Search Song</h3>
-    </div>
+    <nav>
+      <input
+        type="text"
+        name="search"
+        placeholder="Search Songs"
+        autoComplete="off"
+        value={search}
+        onChange={e => onSearchChange(e.target.value)}
+      />
+    </nav>
   );
 }
 

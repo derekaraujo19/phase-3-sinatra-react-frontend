@@ -1,8 +1,15 @@
-function SearchAlbum() {
+function SearchAlbum({search, onSearchChange}) {
   return (
-    <div>
-      <h3>Search Album</h3>
-    </div>
+    <nav>
+      <input
+        type="text"
+        name="search"
+        placeholder="Search Albums"
+        autoComplete="off"
+        value={search}
+        onChange={e => onSearchChange(e.target.value)}
+      />
+    </nav>
   );
 }
 
