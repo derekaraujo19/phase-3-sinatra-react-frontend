@@ -4,7 +4,6 @@ import NewAlbum from "./NewAlbum";
 import Album from "./Album";
 
 function AlbumList() {
-
   const [albums, setAlbums] = useState([]);
   const [albumSearch, setAlbumSearch] = useState("");
 
