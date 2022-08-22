@@ -17,17 +17,19 @@ function Album({
   }
 
   return (
-    <li>
-      <span>Title: {title}</span>
-      <span>Release Date: {release_date}</span>
+    <ul className="Entries">
+      <i>{title}</i>
+      <span>Released: {release_date}</span>
       <span>Artist: {artist}</span>
-      <span>Songs: {songs}</span>
+      <span>{songs.map((song) =>
+        <ul>"{song}"</ul>
+      )}</span>
       <button onClick={handleDeleteClick}>
         <span role="img" aria-label="delete">
           🗑
         </span>
       </button>
-    </li>
+    </ul>
   );
 }
 

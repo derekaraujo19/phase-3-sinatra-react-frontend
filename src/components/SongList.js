@@ -36,7 +36,7 @@ function SongList() {
 // addNewSong takes existing songs from server and adds new songs coming off of Songs
 
   return (
-    <div className="song-list">
+    <div className="List">
       <NewSong addNewSong={addNewSong}/>
       <SearchSong search={songSearch} onSearchChange={setSongSearch}/>
       <ul>

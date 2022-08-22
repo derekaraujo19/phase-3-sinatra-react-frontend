@@ -26,7 +26,7 @@ function AlbumList() {
   }
 
   return (
-    <div className="album-list">
+    <div className="List">
       <NewAlbum />
       <SearchAlbum search={albumSearch} onSearchChange={setAlbumSearch}/>
       <ul>

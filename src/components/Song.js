@@ -11,8 +11,8 @@ function Song({ id, name, artist, album, onSongDelete }) {
   }
 
   return (
-    <li>
-      <span>Song Title: {name}</span>
+    <ul className="Entries">
+      <span>"{name}"</span>
       <span>Artist: {artist}</span>
       <span>Album: {album}</span>
       <button onClick={handleDeleteClick}>
@@ -20,7 +20,7 @@ function Song({ id, name, artist, album, onSongDelete }) {
           🗑
         </span>
       </button>
-    </li>
+    </ul>
   );
 }
 
