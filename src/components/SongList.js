@@ -28,13 +28,6 @@ function SongList() {
   }
 
 
-// Find a way to post songs even if all the fields are not complete
-// How to link a post with two join tables?
-
-// ADD A SONG
-// send addNewSong down to NewSong component
-// addNewSong takes existing songs from server and adds new songs coming off of Songs
-
   return (
     <div className="List">
       <NewSong addNewSong={addNewSong}/>
@@ -43,10 +36,7 @@ function SongList() {
         {displayedSongs.map((song) => (
           <Song
             key={song.id}
-            id={song.id}
-            name={song.name}
-            artist={song.artist}
-            // album={song.album.title}
+            song={song}
             onSongDelete={handleDeleteSong}
           />
         ))}

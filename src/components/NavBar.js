@@ -19,7 +19,6 @@ function NavBar() {
         style={({ isActive }) =>
         isActive ? activeStyle : linkStyles
       }
-        activeStyle={{color: "white", background: "black"}}
         >
         SONGS
       </NavLink>
@@ -29,7 +28,6 @@ function NavBar() {
         style={({ isActive }) =>
         isActive ? activeStyle : linkStyles
       }
-        activeStyle={{color: "white", background: "black"}}
         >
         ALBUMS
       </NavLink>

@@ -33,11 +33,7 @@ function AlbumList() {
         {displayedAlbums.map((album) => (
           <Album
             key={album.id}
-            id={album.id}
-            title={album.title}
-            release_date={album.release_date}
-            artist={album.songs[0].artist}
-            songs={album.songs.map(song => song.name)}
+            album={album}
             onAlbumDelete={handleDeleteAlbum}
           />
         ))}

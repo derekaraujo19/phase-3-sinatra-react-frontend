@@ -1,21 +1,16 @@
-import React, {useState} from "react";
-
-  // create state to house form data for song - name, artist, album, etc..
-  // create values that onChange get updated
-  // onSubmit, call handleSubmit that packages the data from state into an object that makes a post request
-    // send packaged newSong data up via addNewSong to SongList to be added to the DOM
+// import React, { useState } from "react";
 
 function NewSong({addNewSong}) {
-  const [name, setName] = useState("");
-  const [artist, setArtist] = useState("");
-  const [album, setAlbum] = useState("");
+
 
   function handleSubmit(e) {
-    e.preventDefault()
+    // e.preventDefault()
+    // !!! - FIGURE OUT WHY THE PAGE NEEDS A REFRESH IN ORDER TO UPDATE THE DOM
+    // Need to revert back to not using state so it doesn't create an album called ""
     let newSongData = {
-      "name": name,
-      "artist": artist,
-      "album.title": album
+      "name": e.target.name.value,
+      "artist": e.target.artist.value,
+      "album_title": e.target.album_title.value
     };
     fetch('http://localhost:9292/songs', {
       method: "POST",
@@ -26,18 +21,22 @@ function NewSong({addNewSong}) {
     })
     .then((r) => r.json())
     .then((newSong) => addNewSong(newSong));
-    // .then((console.log(album)));
+
+    e.target.reset();
   }
 
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <input type="text" name="name" placeholder="song name" autoComplete="off"
-              onChange={(e) => setName(e.target.value)}/>
+
+        />
         <input type="text" name="artist" placeholder="artist" autoComplete="off"
-              onChange={(e) => setArtist(e.target.value)}/>
-        <input type="text" name="album" placeholder="album" autoComplete="off"
-              onChange={(e) => setAlbum(e.target.value)}/>
+
+        />
+        <input type="text" name="album_title" placeholder="album" autoComplete="off"
+
+        />
         <button type="submit">submit</button>
       </form>
     </div>
