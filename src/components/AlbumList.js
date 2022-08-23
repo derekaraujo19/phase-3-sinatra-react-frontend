@@ -13,7 +13,10 @@ function AlbumList() {
       .then((r) => r.json())
       .then((albums) => setAlbums(albums));
   }, []);
-
+// AddNew
+  function addNewAlbum(newAlbum) {
+    setAlbums([...albums, newAlbum]);
+  };
 // SEARCH
   const displayedAlbums = albums.filter((album) =>
   album.title.toLowerCase().includes(albumSearch.toLowerCase()
@@ -27,7 +30,7 @@ function AlbumList() {
 
   return (
     <div className="List">
-      <NewAlbum />
+      <NewAlbum addNewAlbum={addNewAlbum}/>
       <SearchAlbum search={albumSearch} onSearchChange={setAlbumSearch}/>
       <ul>
         {displayedAlbums.map((album) => (

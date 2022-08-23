@@ -11,11 +11,9 @@ function Song({ song, onSongDelete }) {
   }
 
   // Gives us as the title of the album
-  let album_title;
+  let album_title = "N/A";
   if (song.album) {
     album_title = song.album.title
-  } else {
-    album_title = "N/A"
   }
 
   // button will change state status of isEditing from false to true,will toggle which form you see
