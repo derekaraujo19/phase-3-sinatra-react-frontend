@@ -1,14 +1,17 @@
-// import React, {useState} from "react";
-
+import React, {useState} from "react";
 
 function NewAlbum({addNewAlbum}) {
+  const [title, setTitle] = useState("");
+  const [release_date, setRelease_date] = useState("");
+  const [genre, setGenre] = useState("");
+  const [spotify_link, setSpotify_link] = useState("");
 
   function handleSubmit(e) {
     let newAlbumData = {
-      "title": e.target.title.value,
-      "release_date": e.target.release_date.value,
-      "genre": e.target.genre.value,
-      "spotify_link": e.target.spotify_link.value
+      "title": title,
+      "release_date": release_date,
+      "genre": genre,
+      "spotify_link": spotify_link
     };
     fetch('http://localhost:9292/albums', {
       method: "POST",
@@ -26,10 +29,18 @@ function NewAlbum({addNewAlbum}) {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="text" name="title" placeholder="title" autoComplete="off" />
-        <input type="text" name="release_date" placeholder="release date(Mo D, Y)" autoComplete="off" />
-        <input type="text" name="genre" placeholder="genre" autoComplete="off" />
-        <input type="text" name="spotify_link" placeholder="spotify link" autoComplete="off" />
+        <input type="text" name="title" placeholder="title" autoComplete="off"
+        value={title} onChange={(e) => setTitle(e.target.value)}
+        />
+        <input type="text" name="release_date" placeholder="release date(Mo D, Y)" autoComplete="off"
+        value={release_date} onChange={(e) => setRelease_date(e.target.value)}
+        />
+        <input type="text" name="genre" placeholder="genre" autoComplete="off"
+        value={genre} onChange={(e) => setGenre(e.target.value)}
+        />
+        <input type="text" name="spotify_link" placeholder="spotify link" autoComplete="off"
+        value={spotify_link} onChange={(e) => setSpotify_link(e.target.value)}
+        />
         <button type="submit">submit</button>
       </form>
     </div>
