@@ -26,6 +26,8 @@ function SongList() {
     const updatedSongs = songs.filter((song) => song.id !== id);
     setSongs(updatedSongs);
   }
+// SONG COUNTER
+  let count = 1;
 
 
   return (
@@ -37,6 +39,7 @@ function SongList() {
           <Song
             key={song.id}
             song={song}
+            counter={count++}
             onSongDelete={handleDeleteSong}
           />
         ))}

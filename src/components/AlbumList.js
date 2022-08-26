@@ -27,6 +27,8 @@ function AlbumList() {
     const updatedAlbums = albums.filter((album) => album.id !== id);
     setAlbums(updatedAlbums);
   }
+  // ALBUM COUNTER
+  let count = 1;
 
   return (
     <div className="List">
@@ -37,6 +39,7 @@ function AlbumList() {
           <Album
             key={album.id}
             album={album}
+            counter={count++}
             onAlbumDelete={handleDeleteAlbum}
           />
         ))}

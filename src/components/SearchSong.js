@@ -5,7 +5,7 @@ function SearchSong({search, onSearchChange}) {
       <input
         type="text"
         name="search"
-        placeholder="Search Songs"
+        placeholder="search songs"
         autoComplete="off"
         value={search}
         onChange={e => onSearchChange(e.target.value)}

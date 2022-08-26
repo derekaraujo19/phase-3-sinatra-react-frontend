@@ -12,7 +12,7 @@ const activeStyle = {
 function NavBar() {
   return (
 
-    <div>
+    <div className="NavBar">
       <NavLink
         to="/"
         exact

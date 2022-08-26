@@ -32,7 +32,7 @@ function NewAlbum({addNewAlbum}) {
         <input type="text" name="title" placeholder="title" autoComplete="off"
         value={title} onChange={(e) => setTitle(e.target.value)}
         />
-        <input type="text" name="release_date" placeholder="release date(Mo D, Y)" autoComplete="off"
+        <input type="text" name="release_date" placeholder="release date" autoComplete="off"
         value={release_date} onChange={(e) => setRelease_date(e.target.value)}
         />
         <input type="text" name="genre" placeholder="genre" autoComplete="off"

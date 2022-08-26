@@ -4,12 +4,14 @@ function NewSong({addNewSong}) {
 const [name, setName] = useState("");
 const [artist, setArtist] = useState("");
 const [album_title, setAlbum_title] = useState("");
+const [spotify_link, setSpotify_link] = useState("");
 
   function handleSubmit(e) {
     let newSongData = {
       "name": name,
       "artist": artist,
-      "album_title": album_title
+      "album_title": album_title,
+      "spotify_link": spotify_link
     };
     fetch('http://localhost:9292/songs', {
       method: "POST",
@@ -20,8 +22,6 @@ const [album_title, setAlbum_title] = useState("");
     })
     .then((r) => r.json())
     .then((newSong) => addNewSong(newSong));
-    console.log(e.target.album_title)
-    console.log(e.target.album_title.value)
     e.target.reset();
   }
 
@@ -36,6 +36,9 @@ const [album_title, setAlbum_title] = useState("");
         />
         <input type="text" name="album_title" placeholder="album" autoComplete="off"
         value={album_title} onChange={(e) => setAlbum_title(e.target.value)}
+        />
+        <input type="text" name="spotify_link" placeholder="spotify link" autoComplete="off"
+        value={spotify_link} onChange={(e) => setSpotify_link(e.target.value)}
         />
         <button type="submit">submit</button>
       </form>
