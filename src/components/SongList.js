@@ -29,6 +29,18 @@ function SongList() {
 // SONG COUNTER
   let count = 1;
 
+// UPDATE
+  function handleUpdateSong(updatedSong) {
+    const updatedSongs = songs.map((song) => {
+      if (song.id === updatedSong.id) {
+        return updatedSong;
+      } else {
+        return song;
+      }
+    });
+    setSongs(updatedSongs);
+  }
+
 
   return (
     <div className="List">
@@ -41,6 +53,7 @@ function SongList() {
             song={song}
             counter={count++}
             onSongDelete={handleDeleteSong}
+            onUpdateSong={handleUpdateSong}
           />
         ))}
       </ul>
