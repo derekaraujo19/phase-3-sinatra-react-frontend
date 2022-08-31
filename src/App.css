@@ -29,8 +29,11 @@
 
 .Entries {
   display: block;
-  margin-bottom: 25px;
+  margin-bottom: 22px;
+  word-spacing: 5px;
 }
+
+
 /*
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

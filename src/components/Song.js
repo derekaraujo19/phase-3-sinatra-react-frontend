@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import EditSong from "./EditSong";
 
+
+
 function Song({ song, counter, onSongDelete, onUpdateSong }) {
   const [isEditing, setIsEditing] = useState(false);
+
 
   function handleDeleteClick() {
     fetch(`http://localhost:9292/songs/${song.id}`, {
@@ -20,7 +23,10 @@ function Song({ song, counter, onSongDelete, onUpdateSong }) {
     // SPOTIFY ALBUM LINKS
     function renderSpotify() {
       return (
-        <a href={song.spotify_link} target="_blank" rel="noreferrer noopener"> listen here </a>
+        <a href={song.spotify_link} target="_blank" rel="noreferrer noopener">
+            <img alt="Spotify" src="../images/SpotifyLogo.png"
+            width="25" height="25"/>
+        </a>
       )
     }
 
@@ -30,17 +36,15 @@ function Song({ song, counter, onSongDelete, onUpdateSong }) {
       onUpdateSong(updatedSong);
     }
 
-
-  // form will need submit button - handle a patch request
   // .catch error:  message = error message is top level state - catch will set this state value, placed into value of new div in form
 
   return (
     <div className="Entries">
       <div>
         <span>{counter} </span>
-        <span><strong>"{song.name.toUpperCase()}"</strong></span>
-        <span> artist <strong>{song.artist.toUpperCase()}</strong></span>
-        <span> album <strong>{album_title.toUpperCase()}</strong></span>
+        <span><strong>"{song.name}"</strong></span>
+        <span> ARTIST: {song.artist ? (<strong>{song.artist}</strong>) : <strong>N/A</strong>}</span>
+        <span> ALBUM: <strong>{album_title}</strong></span>
         {song.spotify_link ? renderSpotify() : ""}
         {isEditing ? (
           <EditSong
@@ -51,9 +55,9 @@ function Song({ song, counter, onSongDelete, onUpdateSong }) {
           />
         ) : (
           <button onClick={() => setIsEditing(true)}>
-            <span role="img" aria-label="edit">
+            <div role="img" aria-label="edit">
             ✏️
-            </span>
+            </div>
           </button>
         )}
         <button onClick={handleDeleteClick}>

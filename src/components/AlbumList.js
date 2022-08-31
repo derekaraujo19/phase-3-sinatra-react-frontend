@@ -30,6 +30,19 @@ function AlbumList() {
   // ALBUM COUNTER
   let count = 1;
 
+  // UPDATE
+  function handleUpdateAlbum(updatedAlbum) {
+    const updatedAlbums = albums.map((album) => {
+      if (album.id === updatedAlbum.id) {
+        return updatedAlbum;
+      } else {
+        return album;
+      }
+    });
+    setAlbums(updatedAlbums);
+  }
+
+
   return (
     <div className="List">
       <NewAlbum addNewAlbum={addNewAlbum}/>
@@ -41,6 +54,7 @@ function AlbumList() {
             album={album}
             counter={count++}
             onAlbumDelete={handleDeleteAlbum}
+            onUpdateAlbum={handleUpdateAlbum}
           />
         ))}
       </ul>
