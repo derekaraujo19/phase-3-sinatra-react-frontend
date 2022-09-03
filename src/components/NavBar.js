@@ -15,7 +15,6 @@ function NavBar() {
     <div className="NavBar">
       <NavLink
         to="/"
-        exact
         style={({ isActive }) =>
         isActive ? activeStyle : linkStyles
       }
@@ -24,7 +23,6 @@ function NavBar() {
       </NavLink>
       <NavLink
         to="/albums"
-        exact
         style={({ isActive }) =>
         isActive ? activeStyle : linkStyles
       }
