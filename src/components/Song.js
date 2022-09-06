@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import EditSong from "./EditSong";
 
-
-
 function Song({ song, counter, onSongDelete, onUpdateSong }) {
   const [isEditing, setIsEditing] = useState(false);
-
 
   function handleDeleteClick() {
     fetch(`http://localhost:9292/songs/${song.id}`, {
@@ -14,29 +11,27 @@ function Song({ song, counter, onSongDelete, onUpdateSong }) {
     onSongDelete(song.id);
   }
 
-  // Gives us as the title of the album
+  // ALBUM TITLE
   let album_title = "N/A";
   if (song.album) {
     album_title = song.album.title
   }
 
-    // SPOTIFY ALBUM LINKS
-    function renderSpotify() {
-      return (
-        <a href={song.spotify_link} target="_blank" rel="noreferrer noopener">
-            <img alt="Spotify" src="../images/SpotifyLogo.png"
-            width="25" height="25"/>
-        </a>
-      )
-    }
+  // SPOTIFY ALBUM LINKS
+  function renderSpotify() {
+    return (
+      <a href={song.spotify_link} target="_blank" rel="noreferrer noopener">
+          <img alt="Spotify" src="../images/SpotifyLogo.png"
+          width="25" height="25"/>
+      </a>
+    )
+  }
 
-    // UPDATE FORM CHANGE
-    function handleUpdateSong(updatedSong) {
-      setIsEditing(false);
-      onUpdateSong(updatedSong);
-    }
-
-  // .catch error:  message = error message is top level state - catch will set this state value, placed into value of new div in form
+  // UPDATE FORM CHANGE
+  function handleUpdateSong(updatedSong) {
+    setIsEditing(false);
+    onUpdateSong(updatedSong);
+  }
 
   return (
     <div className="Entries">
@@ -66,10 +61,6 @@ function Song({ song, counter, onSongDelete, onUpdateSong }) {
           </span>
         </button>
       </div>
-      <div>
-      {/* changes to form to re-submit */}
-      </div>
-
     </div>
   );
 }

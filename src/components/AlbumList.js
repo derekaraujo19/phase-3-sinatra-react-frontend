@@ -42,7 +42,6 @@ function AlbumList() {
     setAlbums(updatedAlbums);
   }
 
-
   return (
     <div className="List">
       <NewAlbum addNewAlbum={addNewAlbum}/>

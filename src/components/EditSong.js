@@ -7,7 +7,6 @@ function EditSong({id, song, album_title, onUpdateSong}) {
   const [songSpotify, setSongSpotify] = useState(song.spotify_link);
 
   function handleSubmit(e) {
-    // e.preventDefault();
     let updatedSongData = {
       "name": songName,
       "artist": songArtist,

@@ -7,7 +7,6 @@ function EditAlbum({id, album, onUpdateAlbum}) {
   const [albumSpotify, setAlbumSpotify] = useState(album.spotify_link);
 
   function handleSubmit(e) {
-    // e.preventDefault();
     let updatedAlbumData = {
       "title": albumTitle,
       "release_date": albumDate,

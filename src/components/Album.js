@@ -11,22 +11,14 @@ function Album({ album, counter, onAlbumDelete, onUpdateAlbum}) {
 
     onAlbumDelete(album.id);
   }
+
   // LISTS ALBUM SONGS
-  // function renderSongs() {
-  //   let songs = album.songs.map((song) => (song.name))
-  //   // console.log(songs)
-  //   return (
-  //     <span>{songs.map((song) => (<ul key={song.id}>"{song.toUpperCase()}"</ul>))}</span>
-  //   )
-  // }
     function renderSongs() {
       const songList = album.songs.map((song) =>
         <ul key={song.id}>{song.name.toUpperCase()}</ul>
       )
       return songList;
     }
-
-
 
   // SPOTIFY ALBUM LINKS
   function renderSpotify() {
@@ -43,8 +35,6 @@ function Album({ album, counter, onAlbumDelete, onUpdateAlbum}) {
     setIsEditing(false);
     onUpdateAlbum(updatedAlbum);
   }
-
-
 
   return (
     <div className="Entries">
