@@ -10,7 +10,7 @@ A video walkthrough of the application running can be found [here](https://www.y
 
 The backend repository can be found here: [github.com/derekaraujo19/phase-3-sinatra-react-project](https://github.com/derekaraujo19/phase-3-sinatra-react-project).
 
-## Acklowedgement
+## Acknowledgement
 This application was created using Create React App.
 
 Font Used: Google Fonts; [Robato Condensed](https://fonts.google.com/specimen/Roboto+Condensed?preview.size=29)
