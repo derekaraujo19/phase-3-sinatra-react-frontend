@@ -28,7 +28,6 @@ function SongList() {
   }
 // SONG COUNTER
   let count = 1;
-
 // UPDATE
   function handleUpdateSong(updatedSong) {
     const updatedSongs = songs.map((song) => {

@@ -6,14 +6,13 @@ import Album from "./Album";
 function AlbumList() {
   const [albums, setAlbums] = useState([]);
   const [albumSearch, setAlbumSearch] = useState("");
-
 // GET
   useEffect(() => {
     fetch("http://localhost:9292/albums")
       .then((r) => r.json())
       .then((albums) => setAlbums(albums));
   }, []);
-// AddNew
+// NEW ALBUM
   function addNewAlbum(newAlbum) {
     setAlbums([...albums, newAlbum]);
   };
@@ -29,7 +28,6 @@ function AlbumList() {
   }
   // ALBUM COUNTER
   let count = 1;
-
   // UPDATE
   function handleUpdateAlbum(updatedAlbum) {
     const updatedAlbums = albums.map((album) => {
